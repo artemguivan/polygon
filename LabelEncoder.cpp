@@ -28,9 +28,16 @@ std::vector<int> LabelEncoder(const std::vector<std::string>& vec) {
 // всего - 10+17+20 = 47 байт
 
 int main() {
-    std::ifstream infile("input.txt");
+    std::ifstream infile;
+    std::string filename;
+
+    std::cout << "Please choose one og the files: input1.txt, input2.txt, input3.txt)" << std::endl;
+    std::cin >> filename;
+
+    infile.open(filename);
+
     if (!infile) {
-        std::cerr << "Error: Unable to open input.txt" << std::endl;
+        std::cerr << "Error: Unable to open" << filename << " " << std::endl;
         return 1;
     }
 
